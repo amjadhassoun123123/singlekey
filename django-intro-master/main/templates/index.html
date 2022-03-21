@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% block content %}
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="https://www.singlekey.com/screen/img/logo/png/singlekey_logo.png"
+      width="100" height="50" class="d-inline-block align-top" alt="">
+  </a>
+  <a>
+    <button type="button"
+      class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3">Log
+      in</button>
+  </a>
+</nav>
+<div class="d-md-flex h-md-100 align-items-center">
+  <div class="col-md-8 p-0 bg-indigo h-md-100">
+    <div class='container mt-5'>
+      <form>
+        <div class='text'>
+          <h1>Submit Information</h1>
+        </div>
+        <div class="form-group">
+          <label for="name">Applicant Name</label>
+          <input type="text" class="form-control" id="name"
+            placeholder="Password">
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email"
+            aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share
+            your email with anyone else.</small>
+        </div>
+        
+        <form action="thanks.html" method="post">
+          <button type='submit' class='btn btn-primary'>Submit</button>
+        </form>
+        {% if results %}
+        <div class='w-100 text-center mt-5'>
+          <h3>Previous submissions</h3>
+          {% for i in results %}
+          <div class='text-left mb-3 p-4 card'>
+            <b>{{ i.name }}</b><br>
+            <b>{{ i.email }}</b>
+          </div>
+          {% endfor %}
+          {% endif %}
+        </div>
+    </div>
+  </div>
+  <div class="col-md-2 p-0 bg-white h-md-100 ">
+    <div class="card border-primary mb-2" style="max-width: 18rem;">
+      <div class="card-body text-primary">
+        <h5 class="card-title">Hello Alex</h5>
+        <p class="card-text">Here is a quick summary of your activity so far. if
+          you have any questions about your report feel free to book a call with
+          us </p>
+        <button type="button" class="btn btn-secondary">Book a call</button>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="card border-primary mb-2" style="max-width: 18rem;">
+      <div class="card-body text-primary">
+        <h5 class="card-title">Rent Guarantee</h5>
+        <p class="card-text">Never miss a rent payment! Learn how our Rent
+          Guarantee Program protects your property and rental income so you can
+          take the risk out of renting.</p>
+        <button type="button" class="btn btn-secondary">Start</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+</form>
